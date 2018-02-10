@@ -102,10 +102,12 @@ function processForm()
 		$mailBody = buildMailBodyTemplate($_POST);
 		$did_it_send = sendMail( $_POST, $mailBody );
 		if( $did_it_send )
-		  { redirectToSuccess(); return; }
+			{ redirectToSuccess(); return; }
 		else {
-		  $messages = ['There were no problems with your information but the message failed to send. Please try again in a few minutes or e-mail us directly at developer@example.com'];
-		  showForm( $messages, $_POST );
+			$messages = [
+				'There were no problems with your information but the message failed to send.', 
+				'Please try again in a few minutes or e-mail us directly at developer@example.com'];
+			showForm( $messages, $_POST );
 		}
 	}
 }
