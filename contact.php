@@ -7,7 +7,7 @@ include 'form/page-controller.php';
 </head>
 <body>
 <header>
-	<h1>Website header name and logo</h1>
+	<h1><a href="contact.php">Website header name and logo</a></h1>
 	<ul>
 		<li><a href="#">My</a></li>
 		<li><a href="#">site </a></li>
