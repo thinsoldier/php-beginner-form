@@ -38,7 +38,7 @@ function redirectToSuccess() { header("Location: ?cmd=showSuccess"); exit; }
 
 function validate()
 { 
-	return ['an error message'];
+	return ['an error message','and another','and a third error message'];
 	//return [];
 }
 
