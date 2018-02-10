@@ -4,10 +4,12 @@ include 'form/page-controller.php';
 <html>
 <head>
 <meta charset="UTF-8">
+<link href="style.css" rel="stylesheet">
 </head>
 <body>
 <header>
 	<h1><a href="contact.php">Website header name and logo</a></h1>
+	<nav>
 	<ul>
 		<li><a href="#">My</a></li>
 		<li><a href="#">site </a></li>
@@ -15,6 +17,7 @@ include 'form/page-controller.php';
 		<li><a href="#">navigation</a></li>
 		<li><a href="#">list</a></li>
 	</ul>
+	</nav>
 </header>
 <main>
 	<h2>Contact Us</h2>

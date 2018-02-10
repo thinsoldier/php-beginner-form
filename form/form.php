@@ -28,6 +28,6 @@ if( !empty( $errors ) ) {
 
 	<textarea name="message" placeholder="Your Message"></textarea>
 
-	<input type="submit" value="Send">
+	<div class="wrap-submit"><input type="submit" value="Send"></div>
 
 </form>
