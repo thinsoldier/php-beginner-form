@@ -87,6 +87,8 @@ function buildMailBodyTemplate(){  }
 
 function sendMail()
 {
+	include 'phpmailer-gmail.php';
+	
 	return false;
 	//return true; 
 }
