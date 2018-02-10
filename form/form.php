@@ -20,7 +20,7 @@ if( !empty( $errors ) ) {
 
 	<input type="email" name="email" placeholder="E-mail Address">
 
-	<input type="email" name="phone" placeholder="Phone (555-555-5555)">
+	<input type="text" name="phone" placeholder="Phone (555-555-5555)">
 
 	<input type="text" name="company" placeholder="Company">
 	
