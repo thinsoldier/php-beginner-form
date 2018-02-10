@@ -1,4 +1,5 @@
 <?php
+include 'functions/arrayToList.php';
 
 ob_start();
 route_to_appropriate_function();

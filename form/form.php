@@ -1,6 +1,6 @@
 <?php
 if( !empty( $errors ) ) {
-	var_dump( $errors );
+	echo arrayToList( $errors, 'error-list' );
 }
 
 ?>
