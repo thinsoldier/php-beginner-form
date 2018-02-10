@@ -1,5 +1,8 @@
 <?php
 if( !empty( $errors ) ) {
+
+	foreach($errors as $key =>$value){ $errors[$key] = '<span class="icon">⚠️<span> '.$value; }
+	
 	echo arrayToList( $errors, 'error-list' );
 }
 
