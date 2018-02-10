@@ -3,6 +3,8 @@ if( !empty( $errors ) ) {
 	echo arrayToList( $errors, 'error-list' );
 }
 
+//var_dump($_POST);
+
 ?>
 
 <form method="POST" action="">
@@ -18,6 +20,11 @@ if( !empty( $errors ) ) {
 	<input type="email" name="phone" placeholder="Phone (555-555-5555)">
 
 	<input type="text" name="company" placeholder="Company">
+	
+	<?php
+	$countries = [ 321=>'USA', 987=>'Canada'];
+	echo selectBuilder( 'country', $countries, '', 'key', 'class="foobar"', "Choose a Country");
+	?>
 
 	<textarea name="message" placeholder="Your Message"></textarea>
 

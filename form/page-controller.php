@@ -1,5 +1,6 @@
 <?php
 include 'functions/arrayToList.php';
+include 'functions/selectBuilder.php';
 
 ob_start();
 route_to_appropriate_function();
