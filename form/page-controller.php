@@ -1,4 +1,5 @@
 <?php
+require 'config.php';
 include 'functions/arrayToList.php';
 include 'functions/selectBuilder.php';
 
@@ -87,10 +88,7 @@ function buildMailBodyTemplate(){  }
 
 function sendMail()
 {
-	include 'phpmailer-gmail.php';
-	
-	return false;
-	//return true; 
+	return include 'phpmailer-gmail.php'; 
 }
 
 function processForm()

@@ -1,0 +1,24 @@
+<?php
+
+define('MAIL_SMTP_USERNAME',"username@gmail.com");
+
+define('MAIL_SMTP_PASSWORD',"yourpassword");
+
+//Enable SMTP debugging
+// 0 = off (for production use)
+// 1 = client messages
+// 2 = client and server messages
+define('MAIL_SMTP_DEBUG_LEVEL',2);
+
+// This one doesn't seem to actually work.
+// All my tests came from the smtp username e-mail address
+// no matter what I put in here.
+define('MAIL_FROM_ADDRESS',"from@example.com");
+
+define('MAIL_FROM_NAME',"First Last");
+
+define('MAIL_TO_ADDRESS',"whoto@example.com");
+
+define('MAIL_TO_NAME',"John Doe");
+
+
