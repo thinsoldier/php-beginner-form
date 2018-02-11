@@ -84,10 +84,27 @@ function validate( $input )
 	return $output;
 }
 
-function buildMailBodyTemplate(){  }
+function buildMailBodyTemplate( $input )
+{
+	$output = '';
+	unset( $input['cmd'] );
+	foreach( $input as $field => $value )
+	{
+		$nicename = str_replace('_',' ',$field);
+		$nicename = ucwords($nicename);
+		$value = wordwrap($value);
+		$output .= "$nicename: $value\n\n";
+	}
+	return $output;
+}
 
 function sendMail()
 {
+	$mailVars = [];
+	$mailVars['body'] = buildMailBodyTemplate($_POST);
+	$mailVars['sender name'] = $_POST["first_name"] . ' ' . $_POST["last_name"];
+	// var_dump($mailVars); exit;
+	
 	return include 'phpmailer-gmail.php'; 
 }
 
@@ -99,11 +116,13 @@ function processForm()
 	{ showForm($errors,$_POST); return; }
 	else 
 	{
-		$mailBody = buildMailBodyTemplate($_POST);
-		$did_it_send = sendMail( $_POST, $mailBody );
-		if( $did_it_send )
-			{ redirectToSuccess(); return; }
-		else {
+		if( sendMail() ) 
+		{
+			redirectToSuccess();
+			return;
+		}
+		else 
+		{
 			$messages = [
 				'There were no problems with your information but the message failed to send.', 
 				'Please try again in a few minutes or e-mail us directly at developer@example.com'];

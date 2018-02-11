@@ -54,16 +54,18 @@ $mail->setFrom( MAIL_FROM_ADDRESS, MAIL_FROM_NAME );
 $mail->addAddress( MAIL_TO_ADDRESS, MAIL_TO_NAME );
 
 //Set the subject line
-$mail->Subject = 'PHPMailer GMail SMTP test 5';
+$mail->Subject = '[Website Enquiry] from ' . $mailVars['sender name'];
 
 ////Read an HTML message body from an external file, convert referenced images to embedded,
 ////convert HTML into a basic plain-text alternative body
 ////$mail->msgHTML(file_get_contents('contents.html'), __DIR__);
 
-$mail->Body = 'Debug level 0 this time. This is full html Body field <b>OK</b>? Testing testing. Do you read me?';
+$mail->isHTML(false);
+
+$mail->Body = $mailVars['body'];
 
 //Replace the plain text body with one created manually
-$mail->AltBody = 'This is a plain-text message body';
+//$mail->AltBody = 'This is a plain-text message body';
 
 //Attach an image file
 ////$mail->addAttachment('images/phpmailer_mini.png');
