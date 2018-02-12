@@ -2,6 +2,7 @@
 require 'config.php';
 include 'functions/arrayToList.php';
 include 'functions/selectBuilder.php';
+include 'functions/ArrayCompare.php';
 
 ob_start();
 route_to_appropriate_function();
@@ -31,7 +32,10 @@ function route_to_appropriate_function()
 	} else { exit('INVALID REQUEST'); }
 }
 
-function showForm( $errors=[], $values=[] ) { include 'form.php'; }
+function showForm( $errors=[], $values=[] ) {
+	$values = new ArrayCompare($values);
+	include 'form.php'; 
+}
 
 function showSuccess() { include 'success.php'; }
 
